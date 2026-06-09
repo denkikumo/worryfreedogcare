@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #242424;
+  margin: 0;
+  color: #dfdfdf;
+}
+
+.main-header {
+  display: flex;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.logo img {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero,
+main > section {
+  width: min(92%, 760px);
+  margin-inline: auto;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Stack Sans Headline", sans-serif;
+  margin: 0;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    white-space: nowrap;
+    letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  color: #ffe988;
+  line-height: 1.15;
+}
+
+h3 {
+  font-size: clamp(1.15rem, 3vw, 1.3rem);
+  color: #ffe988;
+}
+
+p {
+  font-family: "Stack Sans Text", sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.05rem);
+  line-height: 1.8;
+  color: #dfdfdf;
+  margin: 8px 0 0;
+}
+
+.hero-subtext {
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+  line-height: 1.5;
+}
+
+.btn {
+  font-family: "Stack Sans Text", sans-serif;
+  color: #242424;
+  background-color: #ffe988;
+  text-decoration: none;
+  display: flex;
+  width: 100%;
+  min-height: 64px;
+  padding: 14px 18px;
+  font-size: clamp(1rem, 4vw, 1.4rem);
+  font-weight: 700;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  margin-top: 32px;
+  line-height: 1.25;
+}
+
+.btn:hover {
+  background-color: #fff0a8;
+}
+
+.photo-carousel {
+  width: 100%;
+  overflow: hidden;
+  padding: clamp(2rem, 6vw, 3rem) 0;
+}
+
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: scrollCarousel 45s linear infinite;
+}
+
+.carousel-track img {
+  width: clamp(180px, 45vw, 280px);
+  height: clamp(230px, 55vw, 340px);
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 12px;
+}
+
+main > section {
+  margin-bottom: clamp(32px, 7vw, 56px);
+}
+
+#process-section,
+#services-section {
+  text-align: center;
+}
+
+.process-title,
+.services-title {
+  color: #dfdfdf;
+}
+
+.section-divider {
+  border: none;
+  height: 1px;
+  background-color: #444;
+  margin: 20px 0;
+}
+
+.process-step,
+.service-card {
+  background-color: #2d2d2d;
+  margin-bottom: 24px;
+  text-align: left;
+  padding: 1em;
+  border-radius: 14px;
+}
+
+.service-card {
+  text-align: center;
+}
+
+.price {
+  color: #dcffcf;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+
+#testimonials-section {
+    text-align: center;
+}
+
+.testimonials-title {
+    color: #DFDFDF;
+}
+
+.testimonial-card {
+    background-color: #2D2D2D;
+    padding: 24px;
+    border-radius: 14px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.testimonial-text {
+    margin: 0;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.testimonial-author {
+    margin-top: 16px;
+    color: #FFE988;
+    font-weight: 600;
+}
+
+@keyframes scrollCarousel {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .main-header {
+    padding: 24px 16px;
+  }
+
+  .logo img {
+    max-width: 140px;
+  }
+
+  .btn {
+    border-radius: 14px;
+  }
+
+  .process-step,
+  .service-card {
+    padding: 1em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    animation: none;
+    overflow-x: auto;
+  }
+}
